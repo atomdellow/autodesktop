@@ -134,3 +134,47 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Rider
+.idea/
+
+# User-specific files
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio specific
+.vs/
+*.csproj.user
+*.suo
+
+# NuGet Packages
+packages/
+*.nupkg
+
+# Roslyn
+.roslyn/
+
+# Test Results
+TestResults/
+
+# SQLite files (if local to project - good practice is to keep them outside version control)
+# *.db
+# *.db-shm
+# *.db-wal
+
+# Backup and temporary files
+*.[Bb]ak
+*.[Tt]mp
+*.[Cc]ache
+
+# Auto-generated files by some tools
+*.generated.cs
+
+# Windows App SDK specific (if not already covered)
+AppPackages/
+BundleArtifacts/

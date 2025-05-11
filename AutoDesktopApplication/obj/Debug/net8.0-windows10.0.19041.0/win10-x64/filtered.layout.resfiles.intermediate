@@ -60,8 +60,3 @@ splashSplashScreen.scale-400.png
 wwwroot\AutoDesktopApplication.styles.css
 wwwroot\AutoDesktopApplication.bundle.scp.css
 AboutAssets.txt
-wwwroot\css\app.css
-wwwroot\css\bootstrap\bootstrap.min.css
-wwwroot\css\bootstrap\bootstrap.min.css.map
-wwwroot\favicon.png
-wwwroot\index.html

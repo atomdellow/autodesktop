@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:AutoDesktopApplication.ViewModels"
+             xmlns:models="clr-namespace:AutoDesktopApplication.Models"
+             x:Class="AutoDesktopApplication.Views.WorkflowsView"
+             x:DataType="viewmodels:WorkflowsViewModel">
+
+    <Grid Padding="20" RowSpacing="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" 
+                    Text="Back to Projects" 
+                    Command="{Binding BackToProjectsCommand}"
+                    BackgroundColor="{StaticResource Secondary}" />
+
+            <Label Grid.Column="1" 
+                   Text="{Binding ProjectName, StringFormat='Project: {0}'}" 
+                   FontSize="20" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+        </Grid>
+
+        <!-- Create New Workflow Section -->
+        <Border Grid.Row="1" 
+                BackgroundColor="{StaticResource Surface}" 
+                Stroke="{StaticResource Border}"
+                StrokeThickness="1"
+                Padding="15">
+            <Grid ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Entry Grid.Column="0"
+                       Placeholder="Enter new workflow name"
+                       Text="{Binding NewWorkflowName}" />
+
+                <Button Grid.Column="1"
+                        Text="Create Workflow"
+                        Command="{Binding CreateWorkflowCommand}"
+                        BackgroundColor="{StaticResource Primary}" />
+            </Grid>
+        </Border>
+
+        <!-- Workflows and Tasks -->
+        <Grid Grid.Row="2" ColumnSpacing="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Workflows List -->
+            <Border Grid.Column="0" 
+                    BackgroundColor="{StaticResource Surface}" 
+                    Stroke="{StaticResource Border}"
+                    StrokeThickness="1">
+                <Grid RowSpacing="10" Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" 
+                           Text="Workflows" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           Margin="0,0,0,10" />
+                    
+                    <CollectionView Grid.Row="1" 
+                                    ItemsSource="{Binding Workflows}"
+                                    SelectionMode="Single"
+                                    SelectedItem="{Binding SelectedWorkflow}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="models:Workflow">
+                                <Frame Margin="0,2" Padding="10" BackgroundColor="White">
+                                    <VerticalStackLayout>
+                                        <Label Text="{Binding Name}" 
+                                               FontSize="16" 
+                                               FontAttributes="Bold" />
+                                        <Label Text="{Binding Description}" 
+                                               FontSize="12"
+                                               TextColor="Gray" />
+                                    </VerticalStackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                        <CollectionView.EmptyView>
+                            <Label Text="No workflows found"
+                                   FontSize="16"
+                                   TextColor="Gray"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+                        </CollectionView.EmptyView>
+                    </CollectionView>
+                    
+                    <HorizontalStackLayout Grid.Row="2" 
+                                           Spacing="10"
+                                           HorizontalOptions="End">
+                        <Button Text="Delete"
+                                Command="{Binding DeleteWorkflowCommand}"
+                                BackgroundColor="#FF3333"
+                                IsEnabled="{Binding IsRunningWorkflow, Converter={StaticResource InverseBoolConverter}}" />
+                        <Button Text="Run"
+                                Command="{Binding RunWorkflowCommand}"
+                                BackgroundColor="Green"
+                                IsEnabled="{Binding IsRunningWorkflow, Converter={StaticResource InverseBoolConverter}}" />
+                    </HorizontalStackLayout>
+                    
+                    <!-- Workflow Execution Progress -->
+                    <VerticalStackLayout Grid.Row="3" 
+                                         IsVisible="{Binding IsRunningWorkflow}"
+                                         Spacing="5"
+                                         Margin="0,10,0,0">
+                        <Label Text="{Binding WorkflowProgress}" 
+                               FontSize="14"
+                               TextColor="Blue" />
+                        <ProgressBar Progress="{Binding WorkflowProgressValue}"
+                                     ProgressColor="Green"
+                                     HorizontalOptions="Fill" />
+                    </VerticalStackLayout>
+                </Grid>
+            </Border>
+
+            <!-- Tasks List -->
+            <Border Grid.Column="1" 
+                    BackgroundColor="{StaticResource Surface}" 
+                    Stroke="{StaticResource Border}"
+                    StrokeThickness="1">
+                <Grid RowSpacing="10" Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" 
+                           Text="{Binding SelectedWorkflow.Name, StringFormat='Tasks in {0}'}" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           Margin="0,0,0,10" />
+                    
+                    <CollectionView Grid.Row="1" 
+                                    ItemsSource="{Binding Tasks}"
+                                    SelectionMode="Single"
+                                    SelectedItem="{Binding SelectedTask}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="models:TaskBot">
+                                <Frame Margin="0,2" Padding="10" BackgroundColor="White">
+                                    <Grid ColumnSpacing="10">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <Label Grid.Column="0" 
+                                               Text="{Binding SequenceOrder, StringFormat='{0}.'}" 
+                                               FontSize="16"
+                                               VerticalOptions="Center" />
+                                        
+                                        <VerticalStackLayout Grid.Column="1">
+                                            <Label Text="{Binding Name}" 
+                                                   FontSize="16" 
+                                                   FontAttributes="Bold" />
+                                            <Label Text="{Binding Description}" 
+                                                   FontSize="12"
+                                                   TextColor="Gray" />
+                                            <Label Text="{Binding Type}" 
+                                                   FontSize="12"
+                                                   TextColor="Blue" />
+                                        </VerticalStackLayout>
+                                        
+                                        <Label Grid.Column="2" 
+                                               Text="{Binding CreatedDate, StringFormat='{0:g}'}" 
+                                               FontSize="10"
+                                               TextColor="Gray"
+                                               VerticalOptions="Center" />
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                        <CollectionView.EmptyView>
+                            <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                                <Label Text="No tasks found"
+                                       FontSize="16"
+                                       TextColor="Gray"
+                                       HorizontalOptions="Center" />
+                                <Label Text="Start recording to add tasks"
+                                       FontSize="14"
+                                       TextColor="Gray"
+                                       HorizontalOptions="Center" />
+                            </VerticalStackLayout>
+                        </CollectionView.EmptyView>
+                    </CollectionView>
+                    
+                    <HorizontalStackLayout Grid.Row="2" 
+                                           Spacing="10"
+                                           HorizontalOptions="End">
+                        <Button Text="Delete Task"
+                                Command="{Binding DeleteTaskCommand}"
+                                BackgroundColor="#FF3333" />
+                        <Button Text="Move Up"
+                                Command="{Binding MoveTaskUpCommand}"
+                                BackgroundColor="{StaticResource Secondary}" />
+                        <Button Text="Move Down"
+                                Command="{Binding MoveTaskDownCommand}"
+                                BackgroundColor="{StaticResource Secondary}" />
+                    </HorizontalStackLayout>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</ContentView>

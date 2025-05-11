@@ -1,24 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
     <PropertyGroup>
-        <TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
-        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+        <!-- Restored original target frameworks -->
+        <TargetFrameworks>net8.0-windows10.0.19041.0</TargetFrameworks>
+        <WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>
         <!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
         <!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
 
-        <!-- Note for MacCatalyst:
-            The default runtime is maccatalyst-x64, except in Release config, in which case the default is maccatalyst-x64;maccatalyst-arm64.
-            When specifying both architectures, use the plural <RuntimeIdentifiers> instead of the singular <RuntimeIdentifier>.
-            The Mac App Store will NOT accept apps with ONLY maccatalyst-arm64 indicated;
-            either BOTH runtimes must be indicated or ONLY macatalyst-x64. -->
-        <!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
-
+        <!-- Ensure we're using .NET 8.0 workloads -->
+        <AndroidSdkDirectory Condition="'$(AndroidSdkDirectory)' == ''">$(ANDROID_HOME)</AndroidSdkDirectory>
+        <AndroidSdkDirectory Condition="!Exists('$(AndroidSdkDirectory)')">$(MSBuildProgramFiles32)\Android\android-sdk</AndroidSdkDirectory>
+        <AndroidApiLevel>34</AndroidApiLevel>
+        <AndroidTargetApiLevel>34</AndroidTargetApiLevel>
+        
         <OutputType>Exe</OutputType>
         <RootNamespace>AutoDesktopApplication</RootNamespace>
         <UseMaui>true</UseMaui>
         <SingleProject>true</SingleProject>
         <ImplicitUsings>enable</ImplicitUsings>
-        <EnableDefaultCssItems>false</EnableDefaultCssItems>
+        <EnableDefaultCssItems>true</EnableDefaultCssItems>
+        <EnableDefaultContentItems>false</EnableDefaultContentItems>
         <Nullable>enable</Nullable>
 
         <!-- Display name -->
@@ -31,9 +32,9 @@
         <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
         <ApplicationVersion>1</ApplicationVersion>
 
-        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
-        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
-        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">24.0</SupportedOSPlatformVersion>
+        <!-- Disable Windows App SDK DeploymentManager auto-initialization for CLI tools -->
+        <WindowsAppSdkDeploymentManagerInitialize>false</WindowsAppSdkDeploymentManagerInitialize>
+
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
         <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
@@ -58,10 +59,42 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="Azure.AI.Vision.ImageAnalysis" Version="1.0.0" />
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+        <PackageReference Include="InputSimulatorCore" Version="1.0.5" />
+        <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.3" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.4">
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+          <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.4" />
+        <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+        <PackageReference Include="Microsoft.Windows.Compatibility" Version="8.0.3" />
+        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.7.250401001" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="OpenCvSharp4" Version="4.10.0.20241108" />
+        <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.10.0.20241108" />
+        <PackageReference Include="System.Drawing.Common" Version="8.0.3" />
+    </ItemGroup>
+
+    <!-- Explicitly include Blazor components and CSS files -->
+    <ItemGroup>
+        <Content Include="Components\**\*.razor" />
+        <Content Include="Components\**\*.razor.css" />
+    </ItemGroup>
+
+    <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
+        <Compile Update="Platforms\Windows\App.xaml.cs">
+            <DependentUpon>App.xaml</DependentUpon>
+        </Compile>
+        <MauiXaml Update="Platforms\Windows\App.xaml">
+            <SubType>Designer</SubType>
+            <Generator>MSBuild:Compile</Generator>
+        </MauiXaml>
     </ItemGroup>
 
 </Project>

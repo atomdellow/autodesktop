@@ -1,0 +1,53 @@
+@page "/inputlog"
+@using AutoDesktopApplication.Services
+@using System.Collections.ObjectModel
+@using Microsoft.Extensions.DependencyInjection
+@inject IServiceProvider ServiceProvider
+
+<h3>Input Log</h3>
+
+<div class="mb-3">
+    <button class="btn btn-primary" @onclick="ClearLog">Clear Log</button>
+</div>
+
+<div class="log-container" style="height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+    @foreach (var message in LogMessages)
+    {
+        <div class="log-entry @GetLogClass(message.Type)">
+            @message.FormattedMessage
+        </div>
+    }
+</div>
+
+@code {
+    private InputLogService _logService = null!; // CS8618: Initialized with null-forgiving operator
+    private ObservableCollection<InputLogMessage> LogMessages => _logService?.LogMessages ?? new ObservableCollection<InputLogMessage>(); // CS8603: Added null check and default value
+
+    protected override void OnInitialized()
+    {
+        _logService = ServiceProvider.GetRequiredService<InputLogService>();
+        
+        // Force refresh when log messages change
+        _logService.LogMessages.CollectionChanged += (sender, e) => 
+        {
+            InvokeAsync(StateHasChanged);
+        };
+    }
+
+    private void ClearLog()
+    {
+        _logService.ClearLogs();
+    }
+
+    private string GetLogClass(LogMessageType type)
+    {
+        return type switch
+        {
+            LogMessageType.Recording => "text-primary",
+            LogMessageType.Playback => "text-success",
+            LogMessageType.Info => "text-info",
+            LogMessageType.Error => "text-danger",
+            _ => ""
+        };
+    }
+}

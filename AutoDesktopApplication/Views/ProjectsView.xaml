@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:AutoDesktopApplication.ViewModels"
+             xmlns:models="clr-namespace:AutoDesktopApplication.Models"
+             x:Class="AutoDesktopApplication.Views.ProjectsView"
+             x:DataType="viewmodels:ProjectsViewModel">
+
+    <Grid Padding="20" RowSpacing="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Create New Project Section -->
+        <Border Grid.Row="0" 
+                BackgroundColor="{StaticResource Surface}" 
+                Stroke="{StaticResource Border}"
+                StrokeThickness="1"
+                Padding="15">
+            <Grid ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Entry Grid.Column="0"
+                       Placeholder="Enter new project name"
+                       Text="{Binding NewProjectName}" />
+
+                <Button Grid.Column="1"
+                        Text="Create Project"
+                        Command="{Binding CreateProjectCommand}"
+                        BackgroundColor="{StaticResource Primary}" />
+            </Grid>
+        </Border>
+
+        <!-- Projects List -->
+        <Border Grid.Row="1" 
+                BackgroundColor="{StaticResource Surface}" 
+                Stroke="{StaticResource Border}"
+                StrokeThickness="1">
+            <Grid RowSpacing="10" Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" 
+                       Text="Your Projects" 
+                       FontSize="18" 
+                       FontAttributes="Bold" 
+                       Margin="0,0,0,10" />
+                
+                <CollectionView Grid.Row="1" 
+                                ItemsSource="{Binding Projects}"
+                                SelectionMode="Single"
+                                SelectedItem="{Binding SelectedProject}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Project">
+                            <Frame Margin="0,5" Padding="10" BackgroundColor="White">
+                                <Grid ColumnSpacing="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <VerticalStackLayout Grid.Column="0">
+                                        <Label Text="{Binding Name}" 
+                                               FontSize="16" 
+                                               FontAttributes="Bold" />
+                                        <Label Text="{Binding Description}" 
+                                               FontSize="12"
+                                               TextColor="Gray" />
+                                        <Label Text="{Binding CreatedDate, StringFormat='Created: {0:d}'}" 
+                                               FontSize="10" 
+                                               TextColor="Gray" />
+                                    </VerticalStackLayout>
+                                    
+                                    <Label Grid.Column="1" 
+                                           Text="{Binding Workflows.Count, StringFormat='{0} workflows'}" 
+                                           VerticalOptions="Center" />
+                                    
+                                    <Button Grid.Column="2" 
+                                            Text="Open" 
+                                            BackgroundColor="{StaticResource Secondary}"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ProjectsViewModel}}, Path=OpenProjectCommand}" 
+                                            CommandParameter="{Binding}" />
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    <CollectionView.EmptyView>
+                        <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                            <Label Text="No projects found"
+                                   FontSize="18"
+                                   TextColor="Gray"
+                                   HorizontalOptions="Center" />
+                            <Label Text="Create a new project to get started"
+                                   FontSize="14"
+                                   TextColor="Gray"
+                                   HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </CollectionView.EmptyView>
+                </CollectionView>
+                
+                <HorizontalStackLayout Grid.Row="2" 
+                                       Spacing="10"
+                                       HorizontalOptions="End">
+                    <Button Text="Delete"
+                            Command="{Binding DeleteProjectCommand}"
+                            BackgroundColor="#FF3333" />
+                    <Button Text="Refresh"
+                            Command="{Binding RefreshCommand}"
+                            BackgroundColor="{StaticResource Secondary}" />
+                </HorizontalStackLayout>
+            </Grid>
+        </Border>
+    </Grid>
+</ContentView>
