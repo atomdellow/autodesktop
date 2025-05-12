@@ -41,6 +41,8 @@ public static class MauiProgram
         builder.Services.AddSingleton<InputRecordingService>();
         builder.Services.AddSingleton<InputPlaybackService>();
         builder.Services.AddSingleton<ScreenCaptureService>();
+        builder.Services.AddSingleton<VisionApiService>();
+        builder.Services.AddSingleton<IScreenshot>(Screenshot.Default); // Restore IScreenshot registration
         
         // Register HttpClient for Ollama service with a base address and timeout
         builder.Services.AddHttpClient("Ollama", client =>
@@ -79,7 +81,7 @@ public static class MauiProgram
         
         InitializeDatabase(app);
 
-        return builder.Build();
+        return app; // Return the already built app
     }
 
     private static void InitializeDatabase(MauiApp app)

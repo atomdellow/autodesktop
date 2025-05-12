@@ -64,6 +64,7 @@ C:\Users\adamd\Projects\autodesktop\AutoDesktopApplication\bin\Debug\net8.0-wind
 C:\Users\adamd\Projects\autodesktop\AutoDesktopApplication\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\adamd\Projects\autodesktop\AutoDesktopApplication\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Primitives.dll
 C:\Users\adamd\Projects\autodesktop\AutoDesktopApplication\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Graphics.Canvas.Interop.dll
+C:\Users\adamd\Projects\autodesktop\AutoDesktopApplication\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.IO.RecyclableMemoryStream.dll
 C:\Users\adamd\Projects\autodesktop\AutoDesktopApplication\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.JSInterop.dll
 C:\Users\adamd\Projects\autodesktop\AutoDesktopApplication\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.Controls.Compatibility.dll
 C:\Users\adamd\Projects\autodesktop\AutoDesktopApplication\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.Controls.dll

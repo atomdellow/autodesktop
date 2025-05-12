@@ -32,8 +32,9 @@ namespace AutoDesktopApplication.Services
         private bool _isWorkflowExecutionInProgress = false; // This guards ExecuteWorkflow
         private readonly InputLogService _logService;
 
-        public event EventHandler<ContinueIterationEventArgs>? ContinueIterationRequested;
+        // public event EventHandler<ContinueIterationEventArgs>? ContinueIterationRequested;
 
+        /*
         public class ContinueIterationEventArgs : EventArgs
         {
             private bool _continueIteration = false;
@@ -42,6 +43,7 @@ namespace AutoDesktopApplication.Services
             public void Stop() => _continueIteration = false;
             public bool ShouldContinue => _continueIteration;
         }
+        */
 
         public InputPlaybackService(InputLogService logService)
         {

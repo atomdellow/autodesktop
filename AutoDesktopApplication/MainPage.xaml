@@ -54,6 +54,12 @@
                         Command="{Binding StopRecordingCommand}" 
                         IsVisible="{Binding IsRecording}"
                         BackgroundColor="#FF3333" />
+                <Button x:Name="TestVisionApiButton"
+                        Text="Test Vision API"
+                        Clicked="OnTestVisionApiClicked"
+                        HorizontalOptions="End"
+                        VerticalOptions="Start"
+                        Margin="0,10,10,0" />
                 <Button x:Name="DebugButton"
                         Text="Debug Logs"
                         Clicked="OnDebugButtonClicked"

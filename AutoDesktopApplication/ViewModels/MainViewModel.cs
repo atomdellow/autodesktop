@@ -176,9 +176,6 @@ namespace AutoDesktopApplication.ViewModels
             
             // Initial screen is Projects
             CurrentViewModel = new ProjectsViewModel(this);
-
-            // Register for playback service events
-            _playbackService.ContinueIterationRequested += PlaybackService_ContinueIterationRequested;
         }
 
         #region Properties
@@ -558,11 +555,6 @@ namespace AutoDesktopApplication.ViewModels
             }
         }
         
-        private void PlaybackService_ContinueIterationRequested(object? sender, InputPlaybackService.ContinueIterationEventArgs e)
-        {
-            e.Continue();
-        }
-
         public async Task<byte[]> CaptureScreenshotAsync()
         {
             return await _screenshotService.CaptureScreenshotAsync();
