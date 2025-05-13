@@ -21,13 +21,14 @@
           "Microsoft.Maui.Controls": "8.0.100",
           "Microsoft.Maui.Controls.Compatibility": "8.0.100",
           "Microsoft.Windows.Compatibility": "8.0.3",
-          "Microsoft.WindowsAppSDK": "1.7.250401001",
+          "Microsoft.WindowsAppSDK": "1.5.240802000",
           "Newtonsoft.Json": "13.0.3",
           "OpenCvSharp4": "4.10.0.20241108",
           "OpenCvSharp4.runtime.win": "4.10.0.20241108",
+          "SkiaSharp.Skottie": "2.88.8",
+          "SkiaSharp.Views.Maui.Controls": "2.88.8",
           "System.Drawing.Common": "8.0.3",
           "System.Net.Http.Json": "8.0.0",
-          "Microsoft.Web.WebView2.Core.Projection": "1.0.2903.40",
           "runtimepack.Microsoft.Windows.SDK.NET.Ref": "10.0.19041.38"
         },
         "runtime": {
@@ -692,7 +693,7 @@
       },
       "Microsoft.Graphics.Win2D/1.2.0": {
         "dependencies": {
-          "Microsoft.WindowsAppSDK": "1.7.250401001"
+          "Microsoft.WindowsAppSDK": "1.5.240802000"
         },
         "runtime": {
           "lib/net6.0-windows10.0.19041.0/Microsoft.Graphics.Canvas.Interop.dll": {
@@ -893,7 +894,7 @@
           "Microsoft.Maui.Graphics": "8.0.100",
           "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "8.0.100",
           "Microsoft.Windows.SDK.BuildTools": "10.0.22621.756",
-          "Microsoft.WindowsAppSDK": "1.7.250401001"
+          "Microsoft.WindowsAppSDK": "1.5.240802000"
         },
         "runtime": {
           "lib/net8.0-windows10.0.19041/Microsoft.Maui.dll": {
@@ -905,7 +906,7 @@
       "Microsoft.Maui.Essentials/8.0.100": {
         "dependencies": {
           "Microsoft.Maui.Graphics": "8.0.100",
-          "Microsoft.WindowsAppSDK": "1.7.250401001"
+          "Microsoft.WindowsAppSDK": "1.5.240802000"
         },
         "runtime": {
           "lib/net8.0-windows10.0.19041/Microsoft.Maui.Essentials.dll": {
@@ -918,7 +919,7 @@
         "dependencies": {
           "Microsoft.Graphics.Win2D": "1.2.0",
           "Microsoft.IO.RecyclableMemoryStream": "3.0.1",
-          "Microsoft.WindowsAppSDK": "1.7.250401001"
+          "Microsoft.WindowsAppSDK": "1.5.240802000"
         },
         "runtime": {
           "lib/net8.0-windows10.0.19041/Microsoft.Maui.Graphics.dll": {
@@ -931,7 +932,7 @@
         "dependencies": {
           "Microsoft.Graphics.Win2D": "1.2.0",
           "Microsoft.Maui.Graphics": "8.0.100",
-          "Microsoft.WindowsAppSDK": "1.7.250401001"
+          "Microsoft.WindowsAppSDK": "1.5.240802000"
         },
         "runtime": {
           "lib/net8.0-windows10.0.19041/Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll": {
@@ -942,13 +943,6 @@
       },
       "Microsoft.Maui.Resizetizer/8.0.100": {},
       "Microsoft.NETCore.Platforms/3.1.0": {},
-      "Microsoft.Web.WebView2/1.0.2903.40": {
-        "native": {
-          "runtimes/win-x64/native/WebView2Loader.dll": {
-            "fileVersion": "1.0.2903.40"
-          }
-        }
-      },
       "Microsoft.Win32.Registry/4.7.0": {
         "dependencies": {
           "System.Security.AccessControl": "4.7.0",
@@ -1011,99 +1005,75 @@
         }
       },
       "Microsoft.Windows.SDK.BuildTools/10.0.22621.756": {},
-      "Microsoft.WindowsAppSDK/1.7.250401001": {
+      "Microsoft.WindowsAppSDK/1.5.240802000": {
         "dependencies": {
-          "Microsoft.Web.WebView2": "1.0.2903.40",
           "Microsoft.Windows.SDK.BuildTools": "10.0.22621.756"
         },
         "runtime": {
           "lib/net6.0-windows10.0.18362.0/Microsoft.InteractiveExperiences.Projection.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.26107.1009"
-          },
-          "lib/net6.0-windows10.0.18362.0/Microsoft.Security.Authentication.OAuth.Projection.dll": {
-            "assemblyVersion": "1.7.0.0",
-            "fileVersion": "1.7.0.0"
+            "fileVersion": "10.0.26105.1006"
           },
           "lib/net6.0-windows10.0.18362.0/Microsoft.WinUI.dll": {
             "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.0.2503"
+            "fileVersion": "3.0.0.2408"
           },
           "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.AppLifecycle.Projection.dll": {
-            "assemblyVersion": "1.7.0.0",
-            "fileVersion": "1.7.0.0"
+            "assemblyVersion": "1.5.0.0",
+            "fileVersion": "1.5.0.0"
           },
           "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.AppNotifications.Builder.Projection.dll": {
-            "assemblyVersion": "1.7.0.0",
-            "fileVersion": "1.7.0.0"
+            "assemblyVersion": "1.5.0.0",
+            "fileVersion": "1.5.0.0"
           },
           "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.AppNotifications.Projection.dll": {
-            "assemblyVersion": "1.7.0.0",
-            "fileVersion": "1.7.0.0"
-          },
-          "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.ApplicationModel.Background.Projection.dll": {
-            "assemblyVersion": "1.7.0.0",
-            "fileVersion": "1.7.0.0"
+            "assemblyVersion": "1.5.0.0",
+            "fileVersion": "1.5.0.0"
           },
           "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll": {
-            "assemblyVersion": "1.7.0.0",
-            "fileVersion": "1.7.0.0"
+            "assemblyVersion": "1.5.0.0",
+            "fileVersion": "1.5.0.0"
           },
           "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.ApplicationModel.Resources.Projection.dll": {
-            "assemblyVersion": "1.7.0.0",
-            "fileVersion": "1.7.0.0"
+            "assemblyVersion": "1.5.0.0",
+            "fileVersion": "1.5.0.0"
           },
           "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll": {
-            "assemblyVersion": "1.7.0.0",
-            "fileVersion": "1.7.0.0"
-          },
-          "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.BadgeNotifications.Projection.dll": {
-            "assemblyVersion": "1.7.0.0",
-            "fileVersion": "1.7.0.0"
+            "assemblyVersion": "1.5.0.0",
+            "fileVersion": "1.5.0.0"
           },
           "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.Management.Deployment.Projection.dll": {
-            "assemblyVersion": "1.7.0.0",
-            "fileVersion": "1.7.0.0"
-          },
-          "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.Media.Capture.Projection.dll": {
-            "assemblyVersion": "1.7.0.0",
-            "fileVersion": "1.7.0.0"
+            "assemblyVersion": "1.5.0.0",
+            "fileVersion": "1.5.0.0"
           },
           "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.PushNotifications.Projection.dll": {
-            "assemblyVersion": "1.7.0.0",
-            "fileVersion": "1.7.0.0"
+            "assemblyVersion": "1.5.0.0",
+            "fileVersion": "1.5.0.0"
           },
           "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.Security.AccessControl.Projection.dll": {
-            "assemblyVersion": "1.7.0.0",
-            "fileVersion": "1.7.0.0"
-          },
-          "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.Storage.Projection.dll": {
-            "assemblyVersion": "1.7.0.0",
-            "fileVersion": "1.7.0.0"
+            "assemblyVersion": "1.5.0.0",
+            "fileVersion": "1.5.0.0"
           },
           "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.System.Power.Projection.dll": {
-            "assemblyVersion": "1.7.0.0",
-            "fileVersion": "1.7.0.0"
+            "assemblyVersion": "1.5.0.0",
+            "fileVersion": "1.5.0.0"
           },
           "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.System.Projection.dll": {
-            "assemblyVersion": "1.7.0.0",
-            "fileVersion": "1.7.0.0"
+            "assemblyVersion": "1.5.0.0",
+            "fileVersion": "1.5.0.0"
           },
           "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.Widgets.Projection.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           },
           "lib/net6.0-windows10.0.18362.0/Microsoft.WindowsAppRuntime.Bootstrap.Net.dll": {
-            "assemblyVersion": "1.7.0.0",
-            "fileVersion": "1.7.0.0"
+            "assemblyVersion": "1.5.0.0",
+            "fileVersion": "1.5.0.0"
           }
         },
         "native": {
-          "runtimes/win-x64/native/Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll": {
-            "fileVersion": "1.7.0.0"
-          },
-          "runtimes/win-x64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {
-            "fileVersion": "1.7.0.0"
+          "runtimes/win10-x64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {
+            "fileVersion": "1.5.0.0"
           }
         }
       },
@@ -1172,6 +1142,76 @@
         }
       },
       "runtime.win-x86.runtime.native.System.Data.SqlClient.sni/4.4.0": {},
+      "SkiaSharp/2.88.8": {
+        "dependencies": {
+          "SkiaSharp.NativeAssets.Win32": "2.88.8",
+          "SkiaSharp.NativeAssets.macOS": "2.88.8"
+        },
+        "runtime": {
+          "lib/net6.0/SkiaSharp.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.8.0"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.macOS/2.88.8": {},
+      "SkiaSharp.NativeAssets.Win32/2.88.8": {
+        "native": {
+          "runtimes/win-x64/native/libSkiaSharp.dll": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SkiaSharp.Skottie/2.88.8": {
+        "dependencies": {
+          "SkiaSharp": "2.88.8"
+        },
+        "runtime": {
+          "lib/net6.0/SkiaSharp.SceneGraph.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.8.0"
+          },
+          "lib/net6.0/SkiaSharp.Skottie.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.8.0"
+          }
+        }
+      },
+      "SkiaSharp.Views.Maui.Controls/2.88.8": {
+        "dependencies": {
+          "SkiaSharp.Views.Maui.Core": "2.88.8"
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.18362.0/SkiaSharp.Views.Maui.Controls.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.8.0"
+          }
+        }
+      },
+      "SkiaSharp.Views.Maui.Core/2.88.8": {
+        "dependencies": {
+          "SkiaSharp": "2.88.8",
+          "SkiaSharp.Views.WinUI": "2.88.8"
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.18362.0/SkiaSharp.Views.Maui.Core.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.8.0"
+          }
+        }
+      },
+      "SkiaSharp.Views.WinUI/2.88.8": {
+        "dependencies": {
+          "Microsoft.WindowsAppSDK": "1.5.240802000",
+          "SkiaSharp": "2.88.8"
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.19041.0/SkiaSharp.Views.Windows.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.8.0"
+          }
+        }
+      },
       "SQLitePCLRaw.bundle_e_sqlite3/2.1.6": {
         "dependencies": {
           "SQLitePCLRaw.lib.e_sqlite3": "2.1.6",
@@ -1749,14 +1789,6 @@
             "fileVersion": "8.0.23.53103"
           }
         }
-      },
-      "Microsoft.Web.WebView2.Core.Projection/1.0.2903.40": {
-        "runtime": {
-          "Microsoft.Web.WebView2.Core.Projection.dll": {
-            "assemblyVersion": "1.0.2903.40",
-            "fileVersion": "1.0.2903.40"
-          }
-        }
       }
     }
   },
@@ -2289,13 +2321,6 @@
       "path": "microsoft.netcore.platforms/3.1.0",
       "hashPath": "microsoft.netcore.platforms.3.1.0.nupkg.sha512"
     },
-    "Microsoft.Web.WebView2/1.0.2903.40": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-THrzYAnJgE3+cNH+9Epr44XjoZoRELdVpXlWGPs6K9C9G6TqyDfVCeVAR/Er8ljLitIUX5gaSkPsy9wRhD1sgQ==",
-      "path": "microsoft.web.webview2/1.0.2903.40",
-      "hashPath": "microsoft.web.webview2.1.0.2903.40.nupkg.sha512"
-    },
     "Microsoft.Win32.Registry/4.7.0": {
       "type": "package",
       "serviceable": true,
@@ -2331,12 +2356,12 @@
       "path": "microsoft.windows.sdk.buildtools/10.0.22621.756",
       "hashPath": "microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512"
     },
-    "Microsoft.WindowsAppSDK/1.7.250401001": {
+    "Microsoft.WindowsAppSDK/1.5.240802000": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kPsJ2LZoo3Xs/6FtIWMZRGnQ2ZMx9zDa0ZpqRGz1qwZr0gwwlXZJTmngaA1Ym2AHmIa05NtX2jEE2He8CzfhTg==",
-      "path": "microsoft.windowsappsdk/1.7.250401001",
-      "hashPath": "microsoft.windowsappsdk.1.7.250401001.nupkg.sha512"
+      "sha512": "sha512-XW6cNzbGKDuzn+iCY1L9pNDm3pF78te8PXjKWEYk+rgePVPV/j2otr75Q5NMbWzsMF461Qq7aPJZKUQAQJNISQ==",
+      "path": "microsoft.windowsappsdk/1.5.240802000",
+      "hashPath": "microsoft.windowsappsdk.1.5.240802000.nupkg.sha512"
     },
     "Mono.TextTemplating/2.2.1": {
       "type": "package",
@@ -2435,6 +2460,55 @@
       "sha512": "sha512-YhEdSQUsTx+C8m8Bw7ar5/VesXvCFMItyZF7G1AUY+OM0VPZUOeAVpJ4Wl6fydBGUYZxojTDR3I6Bj/+BPkJNA==",
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
+    },
+    "SkiaSharp/2.88.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bRkp3uKp5ZI8gXYQT57uKwil1uobb2p8c69n7v5evlB/2JNcMAXVcw9DZAP5Ig3WSvgzGm2YSn27UVeOi05NlA==",
+      "path": "skiasharp/2.88.8",
+      "hashPath": "skiasharp.2.88.8.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.macOS/2.88.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6Kn5TSkKlfyS6azWHF3Jk2sW5C4jCE5uSshM/5AbfFrR+5n6qM5XEnz9h4VaVl7LTxBvHvMkuPb/3bpbq0vxTw==",
+      "path": "skiasharp.nativeassets.macos/2.88.8",
+      "hashPath": "skiasharp.nativeassets.macos.2.88.8.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.Win32/2.88.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-O9QXoWEXA+6cweR4h3BOnwMz+pO9vL9mXdjLrpDd0w1QzCgWmLQBxa1VgySDITiH7nQndrDG1h6937zm9pLj1Q==",
+      "path": "skiasharp.nativeassets.win32/2.88.8",
+      "hashPath": "skiasharp.nativeassets.win32.2.88.8.nupkg.sha512"
+    },
+    "SkiaSharp.Skottie/2.88.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hxszT4DYGV17FMsnpqeeNmfN2R71ogjcc6FFniLcn8Zmroao6NbkrqcgnnR+VuAV0X4gX7bCzodinZQAfTXtaw==",
+      "path": "skiasharp.skottie/2.88.8",
+      "hashPath": "skiasharp.skottie.2.88.8.nupkg.sha512"
+    },
+    "SkiaSharp.Views.Maui.Controls/2.88.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3erdv34NQE+c9Zis1ym1YtyNbNNL/r2THnXB8sHpoue/mVFzR1KCBXEvD48VCLRhX36L7xSzhojpf1G850B3cQ==",
+      "path": "skiasharp.views.maui.controls/2.88.8",
+      "hashPath": "skiasharp.views.maui.controls.2.88.8.nupkg.sha512"
+    },
+    "SkiaSharp.Views.Maui.Core/2.88.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-s3E4c0VVHVGOWRtdUQ7M+0iYEm6KLTDaHKaZo8u2MbyJrPprGgNrvxETQCtM08aXEynxZq2nh7/MWHM78PVezQ==",
+      "path": "skiasharp.views.maui.core/2.88.8",
+      "hashPath": "skiasharp.views.maui.core.2.88.8.nupkg.sha512"
+    },
+    "SkiaSharp.Views.WinUI/2.88.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Zg+EgdDeAn8E8kCdP7WpBkOvdUHLHzmekluXLg5d4FSP0jrBEBs0uWc+dvf3A+OKlewJJzBJQSR6+mUuZe9YFg==",
+      "path": "skiasharp.views.winui/2.88.8",
+      "hashPath": "skiasharp.views.winui.2.88.8.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.6": {
       "type": "package",
@@ -2876,11 +2950,6 @@
       "sha512": "sha512-Obg3a90MkOw9mYKxrardLpY2u0axDMrSmy4JCdq2cYbelM2cUwmUir5Bomvd1yxmPL9h5LVHU1tuKBZpUjfASg==",
       "path": "system.windows.extensions/8.0.0",
       "hashPath": "system.windows.extensions.8.0.0.nupkg.sha512"
-    },
-    "Microsoft.Web.WebView2.Core.Projection/1.0.2903.40": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

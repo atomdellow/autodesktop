@@ -1,0 +1,35 @@
+train: c:/Users/adamd/Projects/autodesktop/AutoDesktopApplication/UI_Element_Dataset/images/train
+val: c:/Users/adamd/Projects/autodesktop/AutoDesktopApplication/UI_Element_Dataset/images/valid
+test: c:/Users/adamd/Projects/autodesktop/AutoDesktopApplication/UI_Element_Dataset/images/test
+
+# number of classes
+nc: 26
+
+# class names
+names:
+  - 'button'
+  - 'checkbox'
+  - 'radio_button'
+  - 'text_input'
+  - 'dropdown_menu'
+  - 'scroll_bar'
+  - 'icon'
+  - 'window_close_button'
+  - 'window_minimize_button'
+  - 'window_maximize_button'
+  - 'window_top_bar'
+  - 'menu_bar'
+  - 'context_menu'
+  - 'tab_control'
+  - 'slider_control'
+  - 'progress_bar'
+  - 'text_label'
+  - 'image_view'
+  - 'task_bar'
+  - 'system_tray_icon'
+  - 'dialog_box'
+  - 'hyperlink'
+  - 'ellipsis_button'
+  - 'app_thumbnail_icon'
+  - 'panel'
+  - 'tree_view_item'

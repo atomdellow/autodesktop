@@ -7,17 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.Diagnostics.CodeAnalysis;
-
 
 namespace AutoDesktopApplication.WinUI
 {
     public partial class App : global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider
     {
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2503")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
         private global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlMetaDataProvider __appProvider;
 
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2503")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlMetaDataProvider _AppProvider
         {
@@ -34,7 +32,7 @@ namespace AutoDesktopApplication.WinUI
         /// <summary>
         /// GetXamlType(Type)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2503")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::Microsoft.UI.Xaml.Markup.IXamlType GetXamlType(global::System.Type type)
         {
@@ -44,7 +42,7 @@ namespace AutoDesktopApplication.WinUI
         /// <summary>
         /// GetXamlType(String)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2503")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::Microsoft.UI.Xaml.Markup.IXamlType GetXamlType(string fullName)
         {
@@ -54,7 +52,7 @@ namespace AutoDesktopApplication.WinUI
         /// <summary>
         /// GetXmlnsDefinitions()
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2503")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::Microsoft.UI.Xaml.Markup.XmlnsDefinition[] GetXmlnsDefinitions()
         {
@@ -68,9 +66,9 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
     /// <summary>
     /// Main class for providing metadata for the app or library
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2503")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    public sealed partial class XamlMetaDataProvider : global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider
+    public sealed class XamlMetaDataProvider : global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider
     {
         private global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlTypeInfoProvider _provider = null;
 
@@ -112,7 +110,7 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
         }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2503")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal partial class XamlTypeInfoProvider
     {
@@ -223,7 +221,7 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
 
         string[] _typeNameTable = null;
         global::System.Type[] _typeTable = null;
-        
+
         private void InitTypeTables()
         {
             _typeNameTable = new string[35];
@@ -339,26 +337,6 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
         private object Activate_8_NavigationView() { return new global::Microsoft.UI.Xaml.Controls.NavigationView(); }
         private object Activate_30_NavigationViewTemplateSettings() { return new global::Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings(); }
         private object Activate_32_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
-        private void StaticInitializer_0_MauiWinUIApplication() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.Maui.MauiWinUIApplication).TypeHandle);
-        private void StaticInitializer_3_IServiceProvider() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.IServiceProvider).TypeHandle);
-        private void StaticInitializer_4_IApplication() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.Maui.IApplication).TypeHandle);
-        private void StaticInitializer_5_ShellView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.Maui.Controls.Platform.ShellView).TypeHandle);
-        private void StaticInitializer_6_RootNavigationView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.Maui.Platform.RootNavigationView).TypeHandle);
-        private void StaticInitializer_7_MauiNavigationView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.Maui.Platform.MauiNavigationView).TypeHandle);
-        private void StaticInitializer_8_NavigationView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationView).TypeHandle);
-        private void StaticInitializer_10_Thickness() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Thickness).TypeHandle);
-        private void StaticInitializer_11_ValueType() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.ValueType).TypeHandle);
-        private void StaticInitializer_17_NavigationViewDisplayMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode).TypeHandle);
-        private void StaticInitializer_18_Enum() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Enum).TypeHandle);
-        private void StaticInitializer_19_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::System.Object>).TypeHandle);
-        private void StaticInitializer_21_NavigationViewBackButtonVisible() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible).TypeHandle);
-        private void StaticInitializer_25_NavigationViewOverflowLabelMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode).TypeHandle);
-        private void StaticInitializer_26_NavigationViewPaneDisplayMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode).TypeHandle);
-        private void StaticInitializer_28_NavigationViewSelectionFollowsFocus() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus).TypeHandle);
-        private void StaticInitializer_29_NavigationViewShoulderNavigationEnabled() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled).TypeHandle);
-        private void StaticInitializer_30_NavigationViewTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings).TypeHandle);
-        private void StaticInitializer_32_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
-        private void StaticInitializer_33_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
         private void VectorAdd_19_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::System.Object>)instance;
@@ -384,7 +362,6 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
 
             case 0:   //  Microsoft.Maui.MauiWinUIApplication
                 userType = new global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Application"));
-                userType.StaticInitializer = StaticInitializer_0_MauiWinUIApplication;
                 userType.AddMemberName("LaunchActivatedEventArgs");
                 userType.AddMemberName("Services");
                 userType.AddMemberName("Application");
@@ -401,14 +378,12 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
 
             case 3:   //  System.IServiceProvider
                 userType = new global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_3_IServiceProvider;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
             case 4:   //  Microsoft.Maui.IApplication
                 userType = new global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_4_IApplication;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
@@ -416,7 +391,6 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
             case 5:   //  Microsoft.Maui.Controls.Platform.ShellView
                 userType = new global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Maui.Platform.RootNavigationView"));
                 userType.Activator = Activate_5_ShellView;
-                userType.StaticInitializer = StaticInitializer_5_ShellView;
                 userType.SetIsBindable();
                 xamlType = userType;
                 break;
@@ -424,7 +398,6 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
             case 6:   //  Microsoft.Maui.Platform.RootNavigationView
                 userType = new global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Maui.Platform.MauiNavigationView"));
                 userType.Activator = Activate_6_RootNavigationView;
-                userType.StaticInitializer = StaticInitializer_6_RootNavigationView;
                 userType.SetIsBindable();
                 xamlType = userType;
                 break;
@@ -432,7 +405,6 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
             case 7:   //  Microsoft.Maui.Platform.MauiNavigationView
                 userType = new global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NavigationView"));
                 userType.Activator = Activate_7_MauiNavigationView;
-                userType.StaticInitializer = StaticInitializer_7_MauiNavigationView;
                 userType.AddMemberName("NavigationViewBackButtonMargin");
                 userType.SetIsBindable();
                 xamlType = userType;
@@ -441,7 +413,6 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
             case 8:   //  Microsoft.UI.Xaml.Controls.NavigationView
                 userType = new global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ContentControl"));
                 userType.Activator = Activate_8_NavigationView;
-                userType.StaticInitializer = StaticInitializer_8_NavigationView;
                 userType.AddMemberName("AlwaysShowHeader");
                 userType.AddMemberName("AutoSuggestBox");
                 userType.AddMemberName("CompactModeThresholdWidth");
@@ -488,14 +459,12 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
 
             case 10:   //  Microsoft.UI.Xaml.Thickness
                 userType = new global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.StaticInitializer = StaticInitializer_10_Thickness;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
             case 11:   //  System.ValueType
                 userType = new global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_11_ValueType;
                 xamlType = userType;
                 break;
 
@@ -521,7 +490,6 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
 
             case 17:   //  Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode
                 userType = new global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_17_NavigationViewDisplayMode;
                 userType.AddEnumValue("Minimal", global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Minimal);
                 userType.AddEnumValue("Compact", global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Compact);
                 userType.AddEnumValue("Expanded", global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Expanded);
@@ -530,13 +498,11 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
 
             case 18:   //  System.Enum
                 userType = new global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.StaticInitializer = StaticInitializer_18_Enum;
                 xamlType = userType;
                 break;
 
             case 19:   //  System.Collections.Generic.IList`1<Object>
                 userType = new global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_19_IList;
                 userType.CollectionAdd = VectorAdd_19_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
@@ -548,7 +514,6 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
 
             case 21:   //  Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible
                 userType = new global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_21_NavigationViewBackButtonVisible;
                 userType.AddEnumValue("Collapsed", global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible.Collapsed);
                 userType.AddEnumValue("Visible", global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible.Visible);
                 userType.AddEnumValue("Auto", global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible.Auto);
@@ -569,7 +534,6 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
 
             case 25:   //  Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode
                 userType = new global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_25_NavigationViewOverflowLabelMode;
                 userType.AddEnumValue("MoreLabel", global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode.MoreLabel);
                 userType.AddEnumValue("NoLabel", global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode.NoLabel);
                 xamlType = userType;
@@ -577,7 +541,6 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
 
             case 26:   //  Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode
                 userType = new global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_26_NavigationViewPaneDisplayMode;
                 userType.AddEnumValue("Auto", global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode.Auto);
                 userType.AddEnumValue("Left", global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode.Left);
                 userType.AddEnumValue("Top", global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode.Top);
@@ -592,7 +555,6 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
 
             case 28:   //  Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus
                 userType = new global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_28_NavigationViewSelectionFollowsFocus;
                 userType.AddEnumValue("Disabled", global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus.Disabled);
                 userType.AddEnumValue("Enabled", global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus.Enabled);
                 xamlType = userType;
@@ -600,7 +562,6 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
 
             case 29:   //  Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled
                 userType = new global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_29_NavigationViewShoulderNavigationEnabled;
                 userType.AddEnumValue("WhenSelectionFollowsFocus", global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled.WhenSelectionFollowsFocus);
                 userType.AddEnumValue("Always", global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled.Always);
                 userType.AddEnumValue("Never", global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled.Never);
@@ -609,7 +570,6 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
 
             case 30:   //  Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings
                 userType = new global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.StaticInitializer = StaticInitializer_30_NavigationViewTemplateSettings;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
@@ -621,7 +581,6 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
             case 32:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
                 userType.Activator = Activate_32_TreeViewNode;
-                userType.StaticInitializer = StaticInitializer_32_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -635,7 +594,6 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
 
             case 33:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_33_IList;
                 userType.CollectionAdd = VectorAdd_33_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
@@ -657,13 +615,13 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
                 {
                     var otherProviders = new global::System.Collections.Generic.List<global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider>();
                     global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider provider;
-                    provider = new global::Microsoft.UI.Xaml.XamlTypeInfo.XamlControlsXamlMetaDataProvider() as global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider;
-                    otherProviders.Add(provider); 
                     provider = new global::Microsoft.Maui.Controls.Compatibility.Compatibility_XamlTypeInfo.XamlMetaDataProvider() as global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider;
                     otherProviders.Add(provider); 
                     provider = new global::Microsoft.Maui.Controls.Controls_Core_XamlTypeInfo.XamlMetaDataProvider() as global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider;
                     otherProviders.Add(provider); 
                     provider = new global::Microsoft.Maui.Core_XamlTypeInfo.XamlMetaDataProvider() as global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider;
+                    otherProviders.Add(provider); 
+                    provider = new global::Microsoft.UI.Xaml.XamlTypeInfo.XamlControlsXamlMetaDataProvider() as global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider;
                     otherProviders.Add(provider); 
                     _otherProviders = otherProviders;
                 }
@@ -1472,15 +1430,14 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
         }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2503")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    internal partial class XamlSystemBaseType : global::Microsoft.UI.Xaml.Markup.IXamlType
+    internal class XamlSystemBaseType : global::Microsoft.UI.Xaml.Markup.IXamlType
     {
         string _fullName;
         global::System.Type _underlyingType;
 
-        public XamlSystemBaseType(string fullName, 
-            global::System.Type underlyingType)
+        public XamlSystemBaseType(string fullName, global::System.Type underlyingType)
         {
             _fullName = fullName;
             _underlyingType = underlyingType;
@@ -1518,15 +1475,14 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
     }
     
     internal delegate object Activator();
-    internal delegate void StaticInitializer();
     internal delegate void AddToCollection(object instance, object item);
     internal delegate void AddToDictionary(object instance, object key, object item);
     internal delegate object CreateFromStringMethod(string args);
     internal delegate object BoxInstanceMethod(object instance);
 
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2503")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    internal partial class XamlUserType : global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlSystemBaseType
+    internal class XamlUserType : global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlSystemBaseType
         , global::Microsoft.UI.Xaml.Markup.IXamlType
     {
         global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlTypeInfoProvider _provider;
@@ -1544,8 +1500,7 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
         global::System.Collections.Generic.Dictionary<string, string> _memberNames;
         global::System.Collections.Generic.Dictionary<string, object> _enumValues;
 
-        public XamlUserType(global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, 
-            global::System.Type fullType, global::Microsoft.UI.Xaml.Markup.IXamlType baseType)
+        public XamlUserType(global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, global::System.Type fullType, global::Microsoft.UI.Xaml.Markup.IXamlType baseType)
             :base(fullName, fullType)
         {
             _provider = provider;
@@ -1611,7 +1566,7 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
 
         override public void RunInitializer() 
         {
-            StaticInitializer();
+            global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(UnderlyingType.TypeHandle);
         }
 
         override public object CreateFromString(string input)
@@ -1670,7 +1625,7 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
                     }
                 }
 
-                return global::System.Convert.ChangeType(value, global::System.Enum.GetUnderlyingType(this.UnderlyingType));
+                return System.Convert.ChangeType(value, System.Enum.GetUnderlyingType(this.UnderlyingType));
             }
             throw new global::System.ArgumentException(input, FullName);
         }
@@ -1678,7 +1633,6 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
         // --- End of Interface methods
 
         public Activator Activator { get; set; }
-        public StaticInitializer StaticInitializer { get; set; }
         public AddToCollection CollectionAdd { get; set; }
         public AddToDictionary DictionaryAdd { get; set; }
         public CreateFromStringMethod CreateFromStringMethod {get; set; }
@@ -1757,9 +1711,9 @@ namespace AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo
     internal delegate object Getter(object instance);
     internal delegate void Setter(object instance, object value);
 
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2503")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    internal partial class XamlMember : global::Microsoft.UI.Xaml.Markup.IXamlMember
+    internal class XamlMember : global::Microsoft.UI.Xaml.Markup.IXamlMember
     {
         global::AutoDesktopApplication.AutoDesktopApplication_XamlTypeInfo.XamlTypeInfoProvider _provider;
         string _name;

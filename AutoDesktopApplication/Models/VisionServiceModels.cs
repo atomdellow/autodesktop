@@ -15,14 +15,14 @@ namespace AutoDesktopApplication.Models
     public class DetectionResponse
     {
         [JsonPropertyName("detections")]
-        public List<DetectedObject>? Detections { get; set; }
+        public List<Detection>? Detections { get; set; }
 
         [JsonPropertyName("error")] // Added to capture potential error messages from the API
         public string? Error { get; set; }
     }
 
     // Represents a single detected object
-    public class DetectedObject
+    public class Detection
     {
         [JsonPropertyName("label")]
         public string? Label { get; set; }
@@ -30,7 +30,16 @@ namespace AutoDesktopApplication.Models
         [JsonPropertyName("confidence")]
         public double Confidence { get; set; } // Value types like double are non-nullable by default and initialized to 0.
 
-        [JsonPropertyName("box")]
-        public List<int>? Box { get; set; } // [xmin, ymin, xmax, ymax]
+        [JsonPropertyName("x")]
+        public int X { get; set; }
+
+        [JsonPropertyName("y")]
+        public int Y { get; set; }
+
+        [JsonPropertyName("width")]
+        public int Width { get; set; }
+
+        [JsonPropertyName("height")]
+        public int Height { get; set; }
     }
 }

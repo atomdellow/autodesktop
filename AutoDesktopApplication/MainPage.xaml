@@ -11,89 +11,110 @@
         <converters:ViewModelToViewConverter x:Key="ViewModelToViewConverter"/>
     </ContentPage.Resources>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
 
-        <!-- Top Toolbar -->
-        <Grid Grid.Row="0" BackgroundColor="{StaticResource Primary}" Padding="10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-            <HorizontalStackLayout Grid.Column="0" Spacing="10">
-                <Button Text="Projects" 
-                        Command="{Binding NavigateToProjectsCommand}" 
-                        BackgroundColor="{StaticResource Secondary}" />
-                <Button Text="Settings" 
-                        Command="{Binding NavigateToSettingsCommand}" 
-                        BackgroundColor="{StaticResource Secondary}" />
-            </HorizontalStackLayout>
+                <!-- Top Toolbar -->
+                <Grid Grid.Row="0" BackgroundColor="{StaticResource Primary}" Padding="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
 
-            <Label Grid.Column="1" 
-                   Text="{Binding CurrentViewModel.Title, TargetNullValue='Auto Desktop'}" 
-                   VerticalOptions="Center" 
-                   HorizontalOptions="Center" 
-                   FontSize="18" 
-                   FontAttributes="Bold" 
-                   TextColor="White" />
+                    <HorizontalStackLayout Grid.Column="0" Spacing="10">
+                        <Button Text="Projects" 
+                                Command="{Binding NavigateToProjectsCommand}" 
+                                BackgroundColor="{StaticResource Secondary}" />
+                        <Button Text="Settings" 
+                                Command="{Binding NavigateToSettingsCommand}" 
+                                BackgroundColor="{StaticResource Secondary}" />
+                    </HorizontalStackLayout>
 
-            <HorizontalStackLayout Grid.Column="2" Spacing="10">
-                <Button x:Name="RecordButton" 
-                        Text="Record" 
-                        Command="{Binding StartRecordingCommand}" 
-                        IsVisible="{Binding IsRecording, Converter={StaticResource InverseBoolConverter}}"
-                        BackgroundColor="#FF3333" />
-                <Button x:Name="StopButton" 
-                        Text="Stop Recording" 
-                        Command="{Binding StopRecordingCommand}" 
-                        IsVisible="{Binding IsRecording}"
-                        BackgroundColor="#FF3333" />
-                <Button x:Name="TestVisionApiButton"
-                        Text="Test Vision API"
-                        Clicked="OnTestVisionApiClicked"
-                        HorizontalOptions="End"
-                        VerticalOptions="Start"
-                        Margin="0,10,10,0" />
-                <Button x:Name="DebugButton"
-                        Text="Debug Logs"
-                        Clicked="OnDebugButtonClicked"
-                        HorizontalOptions="End"
-                        VerticalOptions="Start"
-                        Margin="0,10,10,0" />
-            </HorizontalStackLayout>
-        </Grid>
+                    <Label Grid.Column="1" 
+                           Text="{Binding CurrentViewModel.Title, TargetNullValue='Auto Desktop'}" 
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Center" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="White" />
 
-        <!-- Main Content Area - Views will be displayed here -->
-        <ContentView Grid.Row="1" 
-                     Content="{Binding CurrentViewModel, Converter={StaticResource ViewModelToViewConverter}}" />
+                    <HorizontalStackLayout Grid.Column="2" Spacing="10">
+                        <Button x:Name="RecordButton" 
+                                Text="Record" 
+                                Command="{Binding StartRecordingCommand}" 
+                                IsVisible="{Binding IsRecording, Converter={StaticResource InverseBoolConverter}}"
+                                BackgroundColor="#FF3333" />
+                        <Button x:Name="StopButton" 
+                                Text="Stop Recording" 
+                                Command="{Binding StopRecordingCommand}" 
+                                IsVisible="{Binding IsRecording}"
+                                BackgroundColor="#FF3333" />
+                        <Button x:Name="TestVisionApiButton"
+                                Text="Test Vision API"
+                                Clicked="OnTestVisionApiClicked"
+                                HorizontalOptions="End"
+                                VerticalOptions="Start"
+                                Margin="0,10,10,0" />
+                        <Button x:Name="DebugButton"
+                                Text="Debug Logs"
+                                Clicked="OnDebugButtonClicked"
+                                HorizontalOptions="End"
+                                VerticalOptions="Start"
+                                Margin="0,10,10,0" />
+                    </HorizontalStackLayout>
+                </Grid>
 
-        <!-- Status Bar -->
-        <Grid Grid.Row="2" BackgroundColor="{StaticResource Secondary}" Padding="10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
+                <!-- Main Content Area - Views will be displayed here -->
+                <ContentView Grid.Row="1" 
+                             Content="{Binding CurrentViewModel, Converter={StaticResource ViewModelToViewConverter}}" />
 
-            <Label Grid.Column="0" 
-                   Text="{Binding ErrorMessage}" 
-                   TextColor="Red" 
-                   VerticalOptions="Center" />
+                <!-- Status Bar -->
+                <Grid Grid.Row="2" BackgroundColor="{StaticResource Secondary}" Padding="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
 
-            <StackLayout Grid.Column="1" Orientation="Horizontal">
-                <ActivityIndicator IsRunning="{Binding IsLoading}" 
-                                   IsVisible="{Binding IsLoading}" 
-                                   Color="{StaticResource Primary}" />
-                <Label Text="{Binding LoadingMessage}" 
-                       IsVisible="{Binding IsLoading}" 
-                       VerticalOptions="Center" 
-                       Margin="5,0,0,0" />
-            </StackLayout>
-        </Grid>
-    </Grid>
+                    <Label Grid.Column="0" 
+                           Text="{Binding ErrorMessage}" 
+                           TextColor="Red" 
+                           VerticalOptions="Center" />
+
+                    <StackLayout Grid.Column="1" Orientation="Horizontal">
+                        <ActivityIndicator IsRunning="{Binding IsLoading}" 
+                                           IsVisible="{Binding IsLoading}" 
+                                           Color="{StaticResource Primary}" />
+                        <Label Text="{Binding LoadingMessage}" 
+                               IsVisible="{Binding IsLoading}" 
+                               VerticalOptions="Center" 
+                               Margin="5,0,0,0" />
+                    </StackLayout>
+                </Grid>
+            </Grid>
+
+            <Label 
+                Text="Captured Screenshot:"
+                FontSize="Medium"
+                HorizontalOptions="Center" />
+
+            <Image x:Name="ScreenshotDisplayImage"
+                   WidthRequest="640" 
+                   HeightRequest="360"
+                   Aspect="AspectFit"
+                   BackgroundColor="LightGray"
+                   HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

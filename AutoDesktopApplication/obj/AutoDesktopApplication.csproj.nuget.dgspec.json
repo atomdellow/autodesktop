@@ -104,7 +104,7 @@
             },
             "Microsoft.WindowsAppSDK": {
               "target": "Package",
-              "version": "[1.7.250401001, )"
+              "version": "[1.5.240802000, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -117,6 +117,14 @@
             "OpenCvSharp4.runtime.win": {
               "target": "Package",
               "version": "[4.10.0.20241108, )"
+            },
+            "SkiaSharp.Skottie": {
+              "target": "Package",
+              "version": "[2.88.8, )"
+            },
+            "SkiaSharp.Views.Maui.Controls": {
+              "target": "Package",
+              "version": "[2.88.8, )"
             },
             "System.Drawing.Common": {
               "target": "Package",

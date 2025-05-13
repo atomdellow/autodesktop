@@ -70,12 +70,14 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
         <PackageReference Include="Microsoft.Windows.Compatibility" Version="8.0.3" />
-        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.7.250401001" />
+        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240802000" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
         <PackageReference Include="OpenCvSharp4" Version="4.10.0.20241108" />
         <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.10.0.20241108" />
         <PackageReference Include="System.Drawing.Common" Version="8.0.3" />
         <PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
+        <PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.8" />
+        <PackageReference Include="SkiaSharp.Skottie" Version="2.88.8" />
     </ItemGroup>
 
     <!-- Explicitly include Blazor components and CSS files -->

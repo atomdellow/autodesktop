@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoDesktopApplication.Models; // Assuming VisionServiceModels are in this namespace
 using System.Diagnostics; // For Debug.WriteLine
 using System.Collections.Generic; // For List<T>
+using System.Text.Json; // For JsonSerializer
 
 namespace AutoDesktopApplication.Services
 {
@@ -25,7 +26,7 @@ namespace AutoDesktopApplication.Services
             if (requestData == null || string.IsNullOrEmpty(requestData.Screenshot))
             {
                 Debug.WriteLine("DetectObjectsAsync: requestData or requestData.Screenshot is null or empty.");
-                return new DetectionResponse { Detections = new List<DetectedObject>(), Error = "Screenshot data was empty." };
+                return new DetectionResponse { Detections = new List<Detection>(), Error = "Screenshot data was empty." };
             }
 
             var endpoint = $"{_apiBaseUrl}/detect";
@@ -40,13 +41,29 @@ namespace AutoDesktopApplication.Services
                     Debug.WriteLine("VisionApiService: Received successful response from API.");
                     if (response.Content != null)
                     {
-                        var detectionResponse = await response.Content.ReadFromJsonAsync<DetectionResponse>();
+                        string rawJsonResponse = await response.Content.ReadAsStringAsync(); // Log raw response
+                        Debug.WriteLine($"VisionApiService: Raw JSON response: {rawJsonResponse}");
+
+                        // Deserialize using System.Text.Json
+                        var detectionResponse = JsonSerializer.Deserialize<DetectionResponse>(rawJsonResponse, 
+                            new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
                         if (detectionResponse != null)
                         {
+                            // Log the deserialized object (or parts of it)
+                            Debug.WriteLine($"VisionApiService: Deserialized response object: Error='{detectionResponse.Error}', Detections Count='{(detectionResponse.Detections?.Count ?? 0)}'");
+                            if (detectionResponse.Detections != null && detectionResponse.Detections.Any())
+                            {
+                                foreach (var det in detectionResponse.Detections)
+                                {
+                                    Debug.WriteLine($"VisionApiService: Detection - Label: {det.Label}, Conf: {det.Confidence}, X: {det.X}, Y: {det.Y}, W: {det.Width}, H: {det.Height}");
+                                }
+                            }
+
                             if (detectionResponse.Detections == null)                            
                             {
                                 Debug.WriteLine("VisionApiService: Deserialized response but Detections list is null. Initializing empty list.");
-                                detectionResponse.Detections = new List<DetectedObject>();
+                                detectionResponse.Detections = new List<Detection>();
                             }
                             else
                             {
@@ -56,14 +73,14 @@ namespace AutoDesktopApplication.Services
                         else
                         {
                              Debug.WriteLine("VisionApiService: Deserialized response is null.");
-                             return new DetectionResponse { Detections = new List<DetectedObject>(), Error = "Failed to deserialize API response." };
+                             return new DetectionResponse { Detections = new List<Detection>(), Error = "Failed to deserialize API response." };
                         }
                         return detectionResponse;
                     }
                     else
                     {
                         Debug.WriteLine("VisionApiService: Response content was null.");
-                        return new DetectionResponse { Detections = new List<DetectedObject>(), Error = "API response content was null." };
+                        return new DetectionResponse { Detections = new List<Detection>(), Error = "API response content was null." };
                     }
                 }
                 else
@@ -86,7 +103,7 @@ namespace AutoDesktopApplication.Services
                              Debug.WriteLine($"VisionApiService: Could not deserialize error response: {ex.Message}");
                         }
                     }
-                    return new DetectionResponse { Detections = new List<DetectedObject>(), Error = $"API request failed with status {response.StatusCode}. Details: {errorContent}" };
+                    return new DetectionResponse { Detections = new List<Detection>(), Error = $"API request failed with status {response.StatusCode}. Details: {errorContent}" };
                 }
             }
             catch (HttpRequestException httpEx)
@@ -99,19 +116,19 @@ namespace AutoDesktopApplication.Services
                 if (httpEx.InnerException is System.Net.Sockets.SocketException socketEx && socketEx.SocketErrorCode == System.Net.Sockets.SocketError.ConnectionRefused)
                 {
                     Debug.WriteLine("VisionApiService: Connection refused. Ensure the Python Flask API is running at " + _apiBaseUrl);
-                     return new DetectionResponse { Detections = new List<DetectedObject>(), Error = "Connection to Vision API refused. Is the API running?" };
+                     return new DetectionResponse { Detections = new List<Detection>(), Error = "Connection to Vision API refused. Is the API running?" };
                 }
-                 return new DetectionResponse { Detections = new List<DetectedObject>(), Error = $"HTTP request error: {httpEx.Message}" };
+                 return new DetectionResponse { Detections = new List<Detection>(), Error = $"HTTP request error: {httpEx.Message}" };
             }
             catch (TaskCanceledException tex)
             {
                 Debug.WriteLine($"VisionApiService: API call to {endpoint} timed out: {tex.Message}");
-                return new DetectionResponse { Detections = new List<DetectedObject>(), Error = "API call timed out." };
+                return new DetectionResponse { Detections = new List<Detection>(), Error = "API call timed out." };
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"VisionApiService: Unexpected exception during API call to {endpoint}: {ex.Message}");
-                return new DetectionResponse { Detections = new List<DetectedObject>(), Error = $"An unexpected error occurred: {ex.Message}" };
+                return new DetectionResponse { Detections = new List<Detection>(), Error = $"An unexpected error occurred: {ex.Message}" };
             }
         }
     }
